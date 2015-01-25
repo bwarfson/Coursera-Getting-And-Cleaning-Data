@@ -13,12 +13,12 @@ download.file(fileURL, destfile=zipfile)
 unzip(zipfile, exdir="data")
 
 # Read features and activity levels
-activity.labels <- read.table("UCI HAR Dataset/activity_labels.txt", stringsAsFactors = FALSE, col.names = c("activity_id", "activity"))
+activity.labels <- read.table("data/UCI HAR Dataset/activity_labels.txt", stringsAsFactors = FALSE, col.names = c("activity_id", "activity"))
 activity.labels[,2] <- tolower(activity.labels[,2])
 activity.labels[,2] <- gsub("_"," ", activity.labels[,2])
 
 
-features <- read.table("UCI HAR Dataset/features.txt", row.names = 1, stringsAsFactors = FALSE, col.names = c("id", "fnames")) #[,2]
+features <- read.table("data/UCI HAR Dataset/features.txt", row.names = 1, stringsAsFactors = FALSE, col.names = c("id", "fnames")) #[,2]
 colnames <- features$fnames #get the column names for later use
 # Read test data
 X.test <- read.table("data/UCI HAR Dataset/test/X_test.txt")
