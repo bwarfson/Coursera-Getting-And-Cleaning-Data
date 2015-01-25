@@ -19,7 +19,7 @@ activity.labels[,2] <- gsub("_"," ", activity.labels[,2])
 
 
 features <- read.table("data/UCI HAR Dataset/features.txt", row.names = 1, stringsAsFactors = FALSE, col.names = c("id", "fnames")) #[,2]
-colnames <- features$fnames #get the column names for later use
+colnames <- features$fnames 
 # Read test data
 X.test <- read.table("data/UCI HAR Dataset/test/X_test.txt")
 names(X.test) <- colnames
